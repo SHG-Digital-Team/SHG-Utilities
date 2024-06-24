@@ -1,0 +1,207 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SubprocessTemplate" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1105,2230" sap2010:WorkflowViewState.IdRef="SubprocessTemplate_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Diagnostics.Process" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="31">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="84">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Gracefully close Outlook.&#xA;PRECONDITIONS: N/A&#xA;POSTCONDITIONS: Outlook is closed.&#xA;ARGUMENTS: N/A" DisplayName="Outlook_Exit.xaml" sap:VirtualizedContainerService.HintSize="646,2165" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Outlook_Exit.xaml: Starting workflow.&quot;]" />
+    <Sequence DisplayName="Verify Preconditions" sap:VirtualizedContainerService.HintSize="604,147" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// No preconditions." />
+    </Sequence>
+    <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="604,681" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Close: Always, opens if not already open for consistency." AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="434,470" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="IfNotOpen" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="376,149" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Closes outlook." />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="1912, 117, 1936, 1015" FilePath="C:\Program Files\Microsoft Office\root\Office16\outlook.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALRSURBVFhH7ZfdSxRRGMY3p21Ji3Z3JCMwcjGsLvoPgm4iCAkTyojCNiqRwvZSw0orVqvtAysEofTCJSUyKIqi0CyLFGEoV7aNSohQ6KIggqCbp/OOZ7azs+fY7Ic30QM/mH3n7Ps8M+fMnF3XfzmVduChwUCeMHhb55I0yQne1rlkTXKBt81AjTGoWNv3RUlVAlJ41wwkMbaQGVvIzAneNQMdGYSKNV1xqTkhMyd4V6bGmGG/Isc0PIersg3lnW+k5oTMnODuTLLGmbD52PwF2NQ1ZSI7lyTfAbwtcXSPf4NdVKNz9vEFGxtm14KtbiELRXB3JtsXjOmf3BLmsf2zPUReA+y79ZlbwTy26jQNlkL3ZpJ1Iq8Bhj78ME3uTH5PaUJY00JjxHq2AQor6kJpAazb3fKEJRTqBNVINEas5xCAYJuSMHjq6y/TZD4DVPROo6x9FEUbjsJbf5dNhTDYmgK63WKdUE2Btn47tN1R6YZDiGML6ofgru5BUd0D6Gffovgye8TFAbTALKkWoVgnnARY0PASC2tuYnHtAHxnJkxji5QAhP2xs3+2j9fWVakDHHwEbc8APDVRLGseSzFWBsj0RbSofCvclVeg7b//x5gdu3f0wlPZiaWhQamxRVoAESev4uV7T8FX2w3Plg64d/Wb0PGS4G3o599JTUXmDOCEkmDY3AsC1xLwBvtRuPMGvE3PoJ+bRPHF91JTEQqQ9XashZ4mA1iPWVkXM20dgf/kC+htr9ldiKP40kepOTH7MppD/m2HoUKvDmHFoYh0NyztiMF/Yhj+1lfQ2yegRxLMMD0It1GrtKkPf0P1i6giOoOVEQO+5iH4T4+xZ59Ny4XUdcFt1Fodfoy5CERGpOYi5T2fUBIehe/4MPSwkbI+uI1asobZErjOrtpcHyPJ9cFt1JI1ypVVV+PJ9cFt1GJfMOwN8gFfH5n/RfvH5HL9BgIsf5Fb3KeZAAAAAElFTkSuQmCC" InformativeScreenshot="887bebd33f08fd02cbb6f14ef64fe27f.png" Selector="&lt;wnd app='outlook.exe' cls='*' omit:title='Inbox - tom.hatfield@stockporthomes.org - Outlook' /&gt;" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <Delay sap2010:Annotation.AnnotationText="Acts as a 'delay after', which is missing from use application activities." DisplayName="Delay 3s" Duration="[Timespan.FromSeconds(3)]" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="Delay_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Delay>
+    </Sequence>
+    <Sequence DisplayName="Verify Postconditions" sap:VirtualizedContainerService.HintSize="604,831" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="Processes" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetProcesses ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="More about processes: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-8.0" DisplayName="Get Processes" sap:VirtualizedContainerService.HintSize="562,109" sap2010:WorkflowViewState.IdRef="GetProcesses_1" Processes="[Processes]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetProcesses>
+      <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each of the processes currently running, determine if it is Outlook - if so, the application is already open and an exception is thrown." DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="562,590" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Processes]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="sd:Process">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Process" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="526,424" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If sap2010:Annotation.AnnotationText="ToLower method required since the outlook application is 'OUTLOOK.EXE'" Condition="[item.ToString.ToLower.Contains(&quot;outlook&quot;)]" DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="484,332" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw Exception="[New SystemException(&quot;SE0001 in component Outlook_Exit .xaml: The Outlook desktop application is still open.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Outlook_Exit.xaml: Ending workflow.&quot;]" />
+  </Sequence>
+</Activity>

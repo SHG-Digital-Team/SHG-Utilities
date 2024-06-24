@@ -1,0 +1,368 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SubprocessTemplate" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1214,4478" sap2010:WorkflowViewState.IdRef="SubprocessTemplate_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Diagnostics.Process" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="62">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="96">
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Launch and log into the Outlook desktop application.&#xA;PRECONDITIONS: Outlook is closed.&#xA;POSTCONDITIONS: Outlook is open and logged in.&#xA;ARGUMENTS: N/A" DisplayName="Outlook_Login.xaml" sap:VirtualizedContainerService.HintSize="1224,4413" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="SkipOpeningOutlook" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1182,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Outlook_Login.xaml: Starting workflow.&quot;]" />
+    <Sequence DisplayName="Verify Preconditions" sap:VirtualizedContainerService.HintSize="1182,1715" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="Processes" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetProcesses ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="More about processes: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-8.0" DisplayName="Get Processes" sap:VirtualizedContainerService.HintSize="1038,109" sap2010:WorkflowViewState.IdRef="GetProcesses_1" Processes="[Processes]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetProcesses>
+      <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each of the processes currently running, determine if it is Outlook - if so, the application is already open and an exception is thrown." DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="1038,1474" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Processes]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="sd:Process">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Process" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="1002,1319" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If sap2010:Annotation.AnnotationText="ToLower method required since the outlook application is 'OUTLOOK.EXE'" Condition="[item.ToString.ToLower.Contains(&quot;outlook&quot;)]" DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="960,1227" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="924,1009" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="882,917" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="848,627" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="If Outlook is already open but not already home, kill it and reopen it." DisplayName="Check App State 'Home tab'" sap:VirtualizedContainerService.HintSize="806,533" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V1">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Outlook is already open.&quot;]" />
+                                  <Assign DisplayName="Assign SkipOpeningOutlook" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[SkipOpeningOutlook]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="OUTLOOK.EXE" />
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable ContentHash="hURHKpmKTkiBuLsCV6N8lQ" DesignTimeRectangle="111, 45, 63, 25" ElementType="Button" FriendlyName="'Home tab'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia automationid='TabMail' cls='NetUIRibbonTab' name='Home' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia automationid='TabMail' cls='NetUIRibbonTab' name='Home' role='Tab Item' check:fulltext='Home' /&gt;" Guid="3234f144-53ed-461a-976c-a10157029a57" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAdCAYAAADxTtH0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEDSURBVFhH7ZSBCYMwFEQ7ku1Idpq6SB3DGdzADdxAuZSTI7UQEwlS7uBh9P8E8wzeHvdmMR8sQ7AMwTIEyxAsQ7AMwTIEyxAsQyiWMU1TIPX5lbEMoaqMeZ4XjdaQYRjClXm2bViD6fv31xwGc7WWQzUZEKH3GOMZ7xmMIYHputfWj7Afc8dxDGP0IOzN5RQZv8LN771s/Azh5kAsC6cCgSjOxZh19JaejionQzfCOr8+jz6im4nX1TU4jqMyc6giI/VkHJWhcs/gUv+MVBnsj+ulcqrJABoVwdoRGbhq4vVyKJbxT1iGYBmCZQiWIRTJuGr23jUFyxAsQ/A/Q7CMjWZZAWgiM6/6pElcAAAAAElFTkSuQmCC" InformativeScreenshot="98f4ac054e9358ac0635063271aee9b8.png" Reference="yUtdVic76kOhaIsgAPjN4A/CUu-SaoIwkeKzwEQwgtTlQ" ScopeSelectorArgument="&lt;wnd app='outlook.exe' cls='*' title='*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="1912, 117, 1936, 1015" FilePath="C:\Program Files\Microsoft Office\root\Office16\outlook.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALRSURBVFhH7ZfdSxRRGMY3p21Ji3Z3JCMwcjGsLvoPgm4iCAkTyojCNiqRwvZSw0orVqvtAysEofTCJSUyKIqi0CyLFGEoV7aNSohQ6KIggqCbp/OOZ7azs+fY7Ic30QM/mH3n7Ps8M+fMnF3XfzmVduChwUCeMHhb55I0yQne1rlkTXKBt81AjTGoWNv3RUlVAlJ41wwkMbaQGVvIzAneNQMdGYSKNV1xqTkhMyd4V6bGmGG/Isc0PIersg3lnW+k5oTMnODuTLLGmbD52PwF2NQ1ZSI7lyTfAbwtcXSPf4NdVKNz9vEFGxtm14KtbiELRXB3JtsXjOmf3BLmsf2zPUReA+y79ZlbwTy26jQNlkL3ZpJ1Iq8Bhj78ME3uTH5PaUJY00JjxHq2AQor6kJpAazb3fKEJRTqBNVINEas5xCAYJuSMHjq6y/TZD4DVPROo6x9FEUbjsJbf5dNhTDYmgK63WKdUE2Btn47tN1R6YZDiGML6ofgru5BUd0D6Gffovgye8TFAbTALKkWoVgnnARY0PASC2tuYnHtAHxnJkxji5QAhP2xs3+2j9fWVakDHHwEbc8APDVRLGseSzFWBsj0RbSofCvclVeg7b//x5gdu3f0wlPZiaWhQamxRVoAESev4uV7T8FX2w3Plg64d/Wb0PGS4G3o599JTUXmDOCEkmDY3AsC1xLwBvtRuPMGvE3PoJ+bRPHF91JTEQqQ9XashZ4mA1iPWVkXM20dgf/kC+htr9ldiKP40kepOTH7MppD/m2HoUKvDmHFoYh0NyztiMF/Yhj+1lfQ2yegRxLMMD0It1GrtKkPf0P1i6giOoOVEQO+5iH4T4+xZ59Ny4XUdcFt1Fodfoy5CERGpOYi5T2fUBIehe/4MPSwkbI+uI1asobZErjOrtpcHyPJ9cFt1JI1ypVVV+PJ9cFt1GJfMOwN8gFfH5n/RfvH5HL9BgIsf5Fb3KeZAAAAAElFTkSuQmCC" InformativeScreenshot="887bebd33f08fd02cbb6f14ef64fe27f.png" Selector="&lt;wnd app='outlook.exe' cls='*' omit:title='Inbox - tom.hatfield@stockporthomes.org - Outlook' /&gt;" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+    </Sequence>
+    <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="1182,1383" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If Condition="[Not SkipOpeningOutlook]" DisplayName="If Outlook needs to be opened" sap:VirtualizedContainerService.HintSize="574,1291" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Then>
+          <Sequence DisplayName="If Outlook needs to be opened" sap:VirtualizedContainerService.HintSize="538,1104" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Outlook" sap:VirtualizedContainerService.HintSize="496,1012" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Use Application: Outlook" sap:VirtualizedContainerService.HintSize="462,722" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'OK button'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="420,628" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V1">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,412" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Choose Profile pop-up appeared upon Outlook startup.&quot;]" />
+                          <uix:NClick sap2010:Annotation.AnnotationText="Delay after 5s to give Outlook chance to initialize." ClickType="Single" DelayAfter="5" DisplayName="Click 'OK button'" sap:VirtualizedContainerService.HintSize="334,187" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V1">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="IkJL7CkYuU--3xEL9_ERjw" DesignTimeRectangle="132, 84, 79, 23" FriendlyName="'OK button'" FullSelectorArgument="&lt;wnd title='OK' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd title='OK' cls='Button' check:text='unchecked' /&gt;" Guid="c1eb57f7-831a-4110-b6ba-28bec6f2e6c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAbCAYAAAAAubMBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD8SURBVGhD7dbRDcIgEMZxdmIbJvGNVViFKXzuBmxw9oKlnKG1xguF5Hv4R8/e0y8ompQSIZ2AqRgwFROY5vFEPyb8xNBYRucJPzG8F5ZlQV8CpmLAVAyYigFTsTkwgyNjTMn6WD0P5IwlH/Mc3LrjQvW8X8NjRm9XQEehfBbJ2xqswmT0myC5wTEZbj91pejJFuANk19r9P6NjSnQ6vLpdIHfZ0zbQu/cxJgbHmO2fkv7Nzbmx+VSOvya33s6B8c8voD2U1gh8gVkPcWy27fhMbkM+sNfo5tAp8CcJWAqBkzFgKnYZUx0PeEnhsYyOk/41QP6L2AqBky1Er0AlrjiwX2tgJ8AAAAASUVORK5CYII=" InformativeScreenshot="badc297c614d9110628e6914b08cb8d3.png" Reference="yUtdVic76kOhaIsgAPjN4A/0PlLHJK5vEWENUemWDKzyw" ScopeSelectorArgument="&lt;wnd app='outlook.exe' title='Choose Profile' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="0, 0, 334, 139" ElementType="Text" FriendlyName="'OK button'" ImageBase64="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" SearchSteps="Selector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable ContentHash="IkJL7CkYuU--3xEL9_ERjw" DesignTimeRectangle="132, 84, 79, 23" FriendlyName="'OK button'" FullSelectorArgument="&lt;wnd title='OK' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd title='OK' cls='Button' check:text='unchecked' /&gt;" Guid="c1eb57f7-831a-4110-b6ba-28bec6f2e6c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAbCAYAAAAAubMBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD8SURBVGhD7dbRDcIgEMZxdmIbJvGNVViFKXzuBmxw9oKlnKG1xguF5Hv4R8/e0y8ompQSIZ2AqRgwFROY5vFEPyb8xNBYRucJPzG8F5ZlQV8CpmLAVAyYigFTsTkwgyNjTMn6WD0P5IwlH/Mc3LrjQvW8X8NjRm9XQEehfBbJ2xqswmT0myC5wTEZbj91pejJFuANk19r9P6NjSnQ6vLpdIHfZ0zbQu/cxJgbHmO2fkv7Nzbmx+VSOvya33s6B8c8voD2U1gh8gVkPcWy27fhMbkM+sNfo5tAp8CcJWAqBkzFgKnYZUx0PeEnhsYyOk/41QP6L2AqBky1Er0AlrjiwX2tgJ8AAAAASUVORK5CYII=" InformativeScreenshot="badc297c614d9110628e6914b08cb8d3.png" Reference="yUtdVic76kOhaIsgAPjN4A/0PlLHJK5vEWENUemWDKzyw" ScopeSelectorArgument="&lt;wnd app='outlook.exe' title='Choose Profile' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="0, 0, 334, 139" ElementType="Text" FriendlyName="'OK button'" ImageBase64="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" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="2712, 554, 334, 139" FilePath="C:\Program Files\Microsoft Office\root\Office16\outlook.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALRSURBVFhH7ZfdSxRRGMY3p21Ji3Z3JCMwcjGsLvoPgm4iCAkTyojCNiqRwvZSw0orVqvtAysEofTCJSUyKIqi0CyLFGEoV7aNSohQ6KIggqCbp/OOZ7azs+fY7Ic30QM/mH3n7Ps8M+fMnF3XfzmVduChwUCeMHhb55I0yQne1rlkTXKBt81AjTGoWNv3RUlVAlJ41wwkMbaQGVvIzAneNQMdGYSKNV1xqTkhMyd4V6bGmGG/Isc0PIersg3lnW+k5oTMnODuTLLGmbD52PwF2NQ1ZSI7lyTfAbwtcXSPf4NdVKNz9vEFGxtm14KtbiELRXB3JtsXjOmf3BLmsf2zPUReA+y79ZlbwTy26jQNlkL3ZpJ1Iq8Bhj78ME3uTH5PaUJY00JjxHq2AQor6kJpAazb3fKEJRTqBNVINEas5xCAYJuSMHjq6y/TZD4DVPROo6x9FEUbjsJbf5dNhTDYmgK63WKdUE2Btn47tN1R6YZDiGML6ofgru5BUd0D6Gffovgye8TFAbTALKkWoVgnnARY0PASC2tuYnHtAHxnJkxji5QAhP2xs3+2j9fWVakDHHwEbc8APDVRLGseSzFWBsj0RbSofCvclVeg7b//x5gdu3f0wlPZiaWhQamxRVoAESev4uV7T8FX2w3Plg64d/Wb0PGS4G3o599JTUXmDOCEkmDY3AsC1xLwBvtRuPMGvE3PoJ+bRPHF91JTEQqQ9XashZ4mA1iPWVkXM20dgf/kC+htr9ldiKP40kepOTH7MppD/m2HoUKvDmHFoYh0NyztiMF/Yhj+1lfQ2yegRxLMMD0It1GrtKkPf0P1i6giOoOVEQO+5iH4T4+xZ59Ny4XUdcFt1Fodfoy5CERGpOYi5T2fUBIehe/4MPSwkbI+uI1asobZErjOrtpcHyPJ9cFt1JI1ypVVV+PJ9cFt1GJfMOwN8gFfH5n/RfvH5HL9BgIsf5Fb3KeZAAAAAElFTkSuQmCC" InformativeScreenshot="117cb74010e6b76953871f26f6360da3.png" Selector="&lt;wnd app='outlook.exe' cls='*' omit:title='Choose Profile' /&gt;" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Verify Postconditions" sap:VirtualizedContainerService.HintSize="1182,808" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="434,716" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="376,426" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Home tab'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="334,332" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V1">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,116" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw Exception="[New SystemException(&quot;SE0142 in component Outlook_Login .xaml: The Outlook desktop application could not be launched.&quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable ContentHash="ICAj8NUaT0KDnXSjLsTbFw" DesignTimeRectangle="111, 45, 63, 25" ElementType="Button" FriendlyName="'Home tab'" FullSelectorArgument="&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia automationid='*' cls='NetUIRibbonTab' name='Home' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia cls='NetUIRibbonTab' name='Home' role='Tab Item' automationid='' check:fulltext='Home' /&gt;" Guid="62c17920-46a1-4161-bc73-3f18d9020db3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAdCAYAAADxTtH0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVFhH7ZTdCQIxEIQtwaJE7EDEFvzpQMQOFDsQrUF8sAS1FbWAkzmZY4yHnBcJh8zDh7vZTch+hmvdb9fMPLEMwTIEyxAsQ7AMwTIEyxAsQ7AMIVrGdDzKqbreZCxDSCpjOOhnvW6nQGvI16vlS/1yPuVnMN9tN297CPZqrQ7JZECE5oixxpxDIYYE5of9vuhnHWDvYj7LY/Rob11+IoMXD+HwZZcN1xBzOBDKwqtAD0RxL2LW0Rv7OpK8DB2Edf77fPqIdZjwXD2DcYjKrEMSGVVfxrcyVO4vaNQ3o6oM9of1WDnJZAAMQFQEa9/IwO+n8+oQLeOfsAzBMgTLECxDiJLRnhwbSdldq2AZgmUI/mYIllFwzR4x6HDrF1UPagAAAABJRU5ErkJggg==" InformativeScreenshot="968eb204a31af1d554fa7c55944cb037.png" Reference="yUtdVic76kOhaIsgAPjN4A/CUu-SaoIwkeKzwEQwgtTlQ" ScopeSelectorArgument="&lt;wnd app='outlook.exe' cls='*' title='*' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="1912, 117, 1936, 1015" FilePath="C:\Program Files\Microsoft Office\root\Office16\outlook.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALRSURBVFhH7ZfdSxRRGMY3p21Ji3Z3JCMwcjGsLvoPgm4iCAkTyojCNiqRwvZSw0orVqvtAysEofTCJSUyKIqi0CyLFGEoV7aNSohQ6KIggqCbp/OOZ7azs+fY7Ic30QM/mH3n7Ps8M+fMnF3XfzmVduChwUCeMHhb55I0yQne1rlkTXKBt81AjTGoWNv3RUlVAlJ41wwkMbaQGVvIzAneNQMdGYSKNV1xqTkhMyd4V6bGmGG/Isc0PIersg3lnW+k5oTMnODuTLLGmbD52PwF2NQ1ZSI7lyTfAbwtcXSPf4NdVKNz9vEFGxtm14KtbiELRXB3JtsXjOmf3BLmsf2zPUReA+y79ZlbwTy26jQNlkL3ZpJ1Iq8Bhj78ME3uTH5PaUJY00JjxHq2AQor6kJpAazb3fKEJRTqBNVINEas5xCAYJuSMHjq6y/TZD4DVPROo6x9FEUbjsJbf5dNhTDYmgK63WKdUE2Btn47tN1R6YZDiGML6ofgru5BUd0D6Gffovgye8TFAbTALKkWoVgnnARY0PASC2tuYnHtAHxnJkxji5QAhP2xs3+2j9fWVakDHHwEbc8APDVRLGseSzFWBsj0RbSofCvclVeg7b//x5gdu3f0wlPZiaWhQamxRVoAESev4uV7T8FX2w3Plg64d/Wb0PGS4G3o599JTUXmDOCEkmDY3AsC1xLwBvtRuPMGvE3PoJ+bRPHF91JTEQqQ9XashZ4mA1iPWVkXM20dgf/kC+htr9ldiKP40kepOTH7MppD/m2HoUKvDmHFoYh0NyztiMF/Yhj+1lfQ2yegRxLMMD0It1GrtKkPf0P1i6giOoOVEQO+5iH4T4+xZ59Ny4XUdcFt1Fodfoy5CERGpOYi5T2fUBIehe/4MPSwkbI+uI1asobZErjOrtpcHyPJ9cFt1JI1ypVVV+PJ9cFt1GJfMOwN8gFfH5n/RfvH5HL9BgIsf5Fb3KeZAAAAAElFTkSuQmCC" InformativeScreenshot="887bebd33f08fd02cbb6f14ef64fe27f.png" Selector="&lt;wnd app='outlook.exe' cls='*' omit:title='Inbox - tom.hatfield@stockporthomes.org - Outlook' /&gt;" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1182,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Outlook_Login.xaml: Ending workflow.&quot;]" />
+  </Sequence>
+</Activity>
