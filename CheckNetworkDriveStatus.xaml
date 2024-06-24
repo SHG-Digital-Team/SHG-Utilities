@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1131,3266</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1131,3456</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubprocessTemplate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Check the status of a network drive, specified by its UNC rather than the mapped drive letter, using the Windows command 'net use'.&#xA;PRECONDITIONS: The input arguments are populated. The input location is a valid UNC.&#xA;POSTCONDITIONS: None&#xA;ARGUMENTS: in_NetworkDriveUNC (String), out_IsConnected (Boolean), out_CommandResponse (String)" DisplayName="CheckNetworkDriveStatus.xaml" sap:VirtualizedContainerService.HintSize="634,3201" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Check the status of a network drive, specified by its UNC rather than the mapped drive letter, using the Windows command 'net use'.&#xA;PRECONDITIONS: The input arguments are populated. The input location is a valid UNC.&#xA;POSTCONDITIONS: None&#xA;ARGUMENTS: in_NetworkDriveUNC (String), out_IsConnected (Boolean), out_CommandResponse (String)" DisplayName="CheckNetworkDriveStatus.xaml" sap:VirtualizedContainerService.HintSize="634,3391" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,19 +124,30 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="572,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;CheckNetworkDriveStatus.xaml: Starting workflow.&quot;]" />
-    <Assign sap2010:Annotation.AnnotationText="DELETE WHEN LIVE" sap:VirtualizedContainerService.HintSize="572,113" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[in_NetworkDriveUNC]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">\\shlsapdi2k19\Input_Files_LIVE\DRS</InArgument>
-      </Assign.Value>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="572,303" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,224" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap2010:Annotation.AnnotationText="DELETE WHEN LIVE" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[in_NetworkDriveUNC]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">\\shlsapdi2k19\Input_Files_LIVE\DRS</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <Sequence DisplayName="Verify Preconditions" sap:VirtualizedContainerService.HintSize="572,1043" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="IsValidUNC" />
@@ -194,7 +205,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap2010:Annotation.AnnotationText="Chr(34) corresponds to the double quotes character. &#xD;&#xA;/c makes powershell run the command in double quotes on the command prompt.&#xD;&#xA;&#xD;&#xA;e.g., cmd /c &quot;net use \\shlsapdi2k19\Input_Files_LIVE\DRS&quot;" DisplayName="Assign cmdCommand" sap:VirtualizedContainerService.HintSize="510,169" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap2010:Annotation.AnnotationText="Chr(34) corresponds to the double quotes character. &#xA;/c makes powershell run the command in double quotes on the command prompt.&#xA;&#xA;e.g., cmd /c &quot;net use \\shlsapdi2k19\Input_Files_LIVE\DRS&quot;" DisplayName="Assign cmdCommand" sap:VirtualizedContainerService.HintSize="510,169" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[PowerShellCommand]</OutArgument>
         </Assign.To>
