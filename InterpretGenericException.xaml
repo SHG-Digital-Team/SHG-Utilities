@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1131,6443</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1131,6093</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubprocessTemplate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Given an exception as an input argument, determine fi that exception is generic. If so, determine some of the properties of the inner exception and return them as output arguments (message, exception type, type context, stack trace, and source). Log the full details of the generic exception.&#xA;PRECONDITIONS: in_Exception is populated.&#xA;POSTCONDITIONS: N/A&#xA;ARGUMENTS: in_Exception (System.Exception), out_IsGeneric (Boolean), out_Message (String), out_ExceptionType (String), out_StackTrace (String), out_Source (String), out_TypeContext (String)" DisplayName="InterpretGenericException.xaml" sap:VirtualizedContainerService.HintSize="697,6378" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Given an exception as an input argument, determine fi that exception is generic. If so, determine some of the properties of the inner exception and return them as output arguments (message, exception type, type context, stack trace, and source). Log the full details of the generic exception.&#xA;PRECONDITIONS: in_Exception is populated.&#xA;POSTCONDITIONS: N/A&#xA;ARGUMENTS: in_Exception (System.Exception), out_IsGeneric (Boolean), out_Message (String), out_ExceptionType (String), out_StackTrace (String), out_Source (String), out_TypeContext (String)" DisplayName="InterpretGenericException.xaml" sap:VirtualizedContainerService.HintSize="697,6028" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -120,54 +120,54 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="635,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InterpretGenericException.xaml: Starting workflow.&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="635,310" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Variables>
-        <Variable x:TypeArguments="s:String[]" Name="TestArray" />
-        <Variable x:TypeArguments="x:String" Name="TestString" />
-      </TryCatch.Variables>
-      <TryCatch.Try>
-        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[TestString]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[TestArray(1)]</InArgument>
-          </Assign.Value>
-        </Assign>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_11">
-              <Assign.To>
-                <OutArgument x:TypeArguments="s:Exception">[in_Exception]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="635,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,224" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="534,574" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap2010:Annotation.AnnotationText="DELETE WHEN LIVE" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,310" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="TestArray" />
+              <Variable x:TypeArguments="x:String" Name="TestString" />
+            </TryCatch.Variables>
+            <TryCatch.Try>
+              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[TestString]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[TestArray(1)]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:Exception">[in_Exception]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+          <Assign sap2010:Annotation.AnnotationText="DELETE WHEN LIVE" sap:VirtualizedContainerService.HintSize="472,113" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="s:Exception">[in_Exception]</OutArgument>
             </Assign.To>
