@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SubprocessTemplate" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1214,4478" sap2010:WorkflowViewState.IdRef="SubprocessTemplate_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Diagnostics.Process" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SubprocessTemplate" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1362,4942" sap2010:WorkflowViewState.IdRef="SubprocessTemplate_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Diagnostics.Process" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
@@ -88,9 +88,10 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Launch and log into the Outlook desktop application.&#xA;PRECONDITIONS: Outlook is closed.&#xA;POSTCONDITIONS: Outlook is open and logged in.&#xA;ARGUMENTS: N/A" DisplayName="Outlook_Login.xaml" sap:VirtualizedContainerService.HintSize="1224,4413" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Launch and log into the Outlook desktop application.&#xA;PRECONDITIONS: Outlook is closed.&#xA;POSTCONDITIONS: Outlook is open and logged in.&#xA;ARGUMENTS: N/A" DisplayName="Outlook_Login.xaml" sap:VirtualizedContainerService.HintSize="1372,4877" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="SkipOpeningOutlook" />
     </Sequence.Variables>
@@ -100,8 +101,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1182,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Outlook_Login.xaml: Starting workflow.&quot;]" />
-    <Sequence DisplayName="Verify Preconditions" sap:VirtualizedContainerService.HintSize="1182,1715" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1310,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Outlook_Login.xaml: Starting workflow.&quot;]" />
+    <Sequence DisplayName="Verify Preconditions" sap:VirtualizedContainerService.HintSize="1310,1823" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="Processes" />
       </Sequence.Variables>
@@ -110,60 +111,60 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetProcesses ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="More about processes: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-8.0" DisplayName="Get Processes" sap:VirtualizedContainerService.HintSize="1038,109" sap2010:WorkflowViewState.IdRef="GetProcesses_1" Processes="[Processes]">
+      <ui:GetProcesses ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="More about processes: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=net-8.0" DisplayName="Get Processes" sap:VirtualizedContainerService.HintSize="1248,82" sap2010:WorkflowViewState.IdRef="GetProcesses_1" Processes="[Processes]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:GetProcesses>
-      <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each of the processes currently running, determine if it is Outlook - if so, the application is already open and an exception is thrown." DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="1038,1474" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Processes]">
+      <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each of the processes currently running, determine if it is Outlook - if so, the application is already open and an exception is thrown." DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="1248,1590" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Processes]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="sd:Process">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:Process" Name="item" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="1002,1319" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="For Each Process" sap:VirtualizedContainerService.HintSize="1214,1423" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If sap2010:Annotation.AnnotationText="ToLower method required since the outlook application is 'OUTLOOK.EXE'" Condition="[item.ToString.ToLower.Contains(&quot;outlook&quot;)]" DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="960,1227" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="ToLower method required since the outlook application is 'OUTLOOK.EXE'" Condition="[item.ToString.ToLower.Contains(&quot;outlook&quot;)]" DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="1172,1335" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="924,1009" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="If Outlook already open" sap:VirtualizedContainerService.HintSize="1138,1122" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="882,917" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="1096,1034" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="848,627" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="1062,743" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NCheckState Exists="{x:Null}" sap2010:Annotation.AnnotationText="If Outlook is already open but not already home, kill it and reopen it." DisplayName="Check App State 'Home tab'" sap:VirtualizedContainerService.HintSize="806,533" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V1">
+                            <uix:NCheckState sap2010:Annotation.AnnotationText="If Outlook is already open but not already home, kill it and reopen it." DisplayName="Check App State 'Home tab'" sap:VirtualizedContainerService.HintSize="1000,628" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V1">
                               <uix:NCheckState.IfExists>
-                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,380" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Outlook is already open.&quot;]" />
-                                  <Assign DisplayName="Assign SkipOpeningOutlook" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Outlook is already open.&quot;]" />
+                                  <Assign DisplayName="Assign SkipOpeningOutlook" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[SkipOpeningOutlook]</OutArgument>
                                     </Assign.To>
@@ -174,13 +175,13 @@
                                 </Sequence>
                               </uix:NCheckState.IfExists>
                               <uix:NCheckState.IfNotExists>
-                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,248" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="OUTLOOK.EXE" />
+                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="OUTLOOK.EXE" />
                                 </Sequence>
                               </uix:NCheckState.IfNotExists>
                               <uix:NCheckState.Target>
@@ -221,42 +222,42 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="1182,1383" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="1310,1490" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[Not SkipOpeningOutlook]" DisplayName="If Outlook needs to be opened" sap:VirtualizedContainerService.HintSize="574,1291" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[Not SkipOpeningOutlook]" DisplayName="If Outlook needs to be opened" sap:VirtualizedContainerService.HintSize="666,1379" sap2010:WorkflowViewState.IdRef="If_2">
         <If.Then>
-          <Sequence DisplayName="If Outlook needs to be opened" sap:VirtualizedContainerService.HintSize="538,1104" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence DisplayName="If Outlook needs to be opened" sap:VirtualizedContainerService.HintSize="632,1197" sap2010:WorkflowViewState.IdRef="Sequence_17">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Outlook" sap:VirtualizedContainerService.HintSize="496,1012" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Outlook" sap:VirtualizedContainerService.HintSize="590,1109" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Use Application: Outlook" sap:VirtualizedContainerService.HintSize="462,722" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence DisplayName="Use Application: Outlook" sap:VirtualizedContainerService.HintSize="556,818" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'OK button'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="420,628" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V1">
+                    <uix:NCheckState DisplayName="Check App State 'OK button'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,703" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V1">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,412" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,486" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Choose Profile pop-up appeared upon Outlook startup.&quot;]" />
-                          <uix:NClick sap2010:Annotation.AnnotationText="Delay after 5s to give Outlook chance to initialize." ClickType="Single" DelayAfter="5" DisplayName="Click 'OK button'" sap:VirtualizedContainerService.HintSize="334,187" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V1">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Choose Profile pop-up appeared upon Outlook startup.&quot;]" />
+                          <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Delay after 5s to give Outlook chance to initialize." ClickType="Single" DelayAfter="5" DisplayName="Click 'OK button'" sap:VirtualizedContainerService.HintSize="388,188" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dbe2dd02-0558-4daf-bb81-1206d595027a" Version="V1">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable ContentHash="IkJL7CkYuU--3xEL9_ERjw" DesignTimeRectangle="132, 84, 79, 23" FriendlyName="'OK button'" FullSelectorArgument="&lt;wnd title='OK' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd title='OK' cls='Button' check:text='unchecked' /&gt;" Guid="c1eb57f7-831a-4110-b6ba-28bec6f2e6c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAbCAYAAAAAubMBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD8SURBVGhD7dbRDcIgEMZxdmIbJvGNVViFKXzuBmxw9oKlnKG1xguF5Hv4R8/e0y8ompQSIZ2AqRgwFROY5vFEPyb8xNBYRucJPzG8F5ZlQV8CpmLAVAyYigFTsTkwgyNjTMn6WD0P5IwlH/Mc3LrjQvW8X8NjRm9XQEehfBbJ2xqswmT0myC5wTEZbj91pejJFuANk19r9P6NjSnQ6vLpdIHfZ0zbQu/cxJgbHmO2fkv7Nzbmx+VSOvya33s6B8c8voD2U1gh8gVkPcWy27fhMbkM+sNfo5tAp8CcJWAqBkzFgKnYZUx0PeEnhsYyOk/41QP6L2AqBky1Er0AlrjiwX2tgJ8AAAAASUVORK5CYII=" InformativeScreenshot="badc297c614d9110628e6914b08cb8d3.png" Reference="yUtdVic76kOhaIsgAPjN4A/0PlLHJK5vEWENUemWDKzyw" ScopeSelectorArgument="&lt;wnd app='outlook.exe' title='Choose Profile' /&gt;" SearchSteps="Selector" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
@@ -313,25 +314,25 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Verify Postconditions" sap:VirtualizedContainerService.HintSize="1182,808" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Verify Postconditions" sap:VirtualizedContainerService.HintSize="1310,939" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="434,716" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="590,828" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="376,426" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence DisplayName="Use Application: Inbox - * - Outlook" sap:VirtualizedContainerService.HintSize="556,537" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Home tab'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="334,332" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V1">
+              <uix:NCheckState DisplayName="Check App State 'Home tab'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,422" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="7e6579cd-823d-4985-b9c8-7cd1944d7f02" Version="V1">
                 <uix:NCheckState.IfExists>
                   <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
@@ -342,13 +343,13 @@
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,116" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Throw Exception="[New SystemException(&quot;SE0142 in component Outlook_Login .xaml: The Outlook desktop application could not be launched.&quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                    <Throw DisplayName="Throw Utility SE" Exception="[New SystemException(&quot;Outlook_Login_SE0001 in component Outlook_Login.xaml:  The Outlook desktop application could not be launched.&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
                   </Sequence>
                 </uix:NCheckState.IfNotExists>
                 <uix:NCheckState.Target>
@@ -363,6 +364,6 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1182,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Outlook_Login.xaml: Ending workflow.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1310,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Outlook_Login.xaml: Ending workflow.&quot;]" />
   </Sequence>
 </Activity>
