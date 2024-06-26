@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1131,6115</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1131,6137</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SubprocessTemplate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,7 +109,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Given an exception as an input argument, determine fi that exception is generic. If so, determine some of the properties of the inner exception and return them as output arguments (message, exception type, type context, stack trace, and source). Log the full details of the generic exception.&#xA;PRECONDITIONS: in_Exception is populated.&#xA;POSTCONDITIONS: N/A&#xA;ARGUMENTS: in_Exception (System.Exception), out_IsGeneric (Boolean), out_Message (String), out_ExceptionType (String), out_StackTrace (String), out_Source (String), out_TypeContext (String)" DisplayName="InterpretGenericException.xaml" sap:VirtualizedContainerService.HintSize="697,6050" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="DESCRIPTION: Given an exception as an input argument, determine fi that exception is generic. If so, determine some of the properties of the inner exception and return them as output arguments (message, exception type, type context, stack trace, and source). Log the full details of the generic exception.&#xA;PRECONDITIONS: in_Exception is populated.&#xA;POSTCONDITIONS: N/A&#xA;ARGUMENTS: in_Exception (System.Exception), out_IsGeneric (Boolean), out_Message (String), out_ExceptionType (String), out_StackTrace (String), out_Source (String), out_TypeContext (String)" DisplayName="InterpretGenericException.xaml" sap:VirtualizedContainerService.HintSize="697,6072" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,7 +208,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="635,4650" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="635,4672" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="Matches" />
         <Variable x:TypeArguments="s:Exception" Name="InnerException" />
@@ -265,9 +265,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:Matches>
-      <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="If there is one exception code in the exception, then skip interpretation. If there is more than one, log a warning then skip interpretation, if there are zero matches then we must interpret the generic exception." Condition="[Matches.Count=1]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="573,3784" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+      <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="If there is one exception code in the exception, then skip interpretation. If there is more than one, log a warning then skip interpretation, if there are zero matches then we must interpret the generic exception." Condition="[Matches.Count=1]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="573,3806" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
         <ui:IfElseIfV2.Else>
-          <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="539,2698" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="539,2720" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="LogMessage" />
             </Sequence.Variables>
@@ -342,7 +342,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The exception type can be  many values, some are .NET exception types whereas others are exceptions unique to UiPath. For each type we could realistically encounter, we assign a type context to allow the generic exception to be more human-readable in the stakeholder-facing reports whereas the logs will be sufficiently detailed for the developer to be able to diagnose the issue." DisplayName="Switch" Expression="[out_ExceptionType]" sap:VirtualizedContainerService.HintSize="497,1255" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The exception type can be  many values, some are .NET exception types whereas others are exceptions unique to UiPath. For each type we could realistically encounter, we assign a type context to allow the generic exception to be more human-readable in the stakeholder-facing reports whereas the logs will be sufficiently detailed for the developer to be able to diagnose the issue." DisplayName="Switch" Expression="[out_ExceptionType]" sap:VirtualizedContainerService.HintSize="497,1277" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Switch.Default>
                 <Sequence DisplayName="Not Found" sap:VirtualizedContainerService.HintSize="496,416" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
@@ -705,6 +705,14 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">["Default system exception type for UiPath Studio. This exception is likely a non-generic exception with a bad exception code."]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign x:Key="System.Exception" DisplayName="Assign out_TypeContext" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_57">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_TypeContext]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Default system exception type for UiPath Studio, specifically the official REFramework template. This is likely to be an REFramework setup / integration failure."]</InArgument>
                 </Assign.Value>
               </Assign>
             </Switch>
